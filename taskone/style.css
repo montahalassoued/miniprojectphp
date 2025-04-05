@@ -1,0 +1,12 @@
+.note-box {
+    border: 1px solid grey;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.moyenne-box {
+    background-color: #65BFCD;
+    font-weight: bold;
+}

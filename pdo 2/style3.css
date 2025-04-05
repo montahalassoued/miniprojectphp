@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .navbar {
+    background-color: #007bff !important; /* bleu */
+  }
+
+  .navbar .nav-link, .navbar .navbar-brand {
+    color: white !important;
+  }
+
+  .navbar .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .main-message {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-message h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343a40;
+  }
