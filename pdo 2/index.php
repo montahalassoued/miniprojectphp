@@ -18,13 +18,13 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link active" href="Home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Liste des étudiants</a>
+          <a class="nav-link" href="Home.php">Liste des étudiants</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Liste des sections</a>
+          <a class="nav-link" href="section.php">Liste des sections</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

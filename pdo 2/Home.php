@@ -1,6 +1,17 @@
 <?php
+session_start();
 include("data.php");
+include("log.php");
 
+
+// Initialize MySQLi connection
+$mysqli = new mysqli("localhost", "root", "", "newdata");
+
+
+// Check connection
+if ($mysqli->connect_error) {
+  die("Connection failed: " . $mysqli->connect_error);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -74,11 +85,12 @@ include("data.php");
       echo"<td>".$row['name']."</td>";
       echo "<td>".$row['birthday']."</td>";
       echo "<td>".$row['section']."</td>";
-      echo "<td><a class='btn btn-primary' href='details.php?id=".$row['id']."'>Voir détails</a>
-      <a class='btn btn-primary' href='details.php?id=".$row['id']."'>Delete</a>
-      <a class='btn btn-primary' href='details.php?id=".$row['id']."'>Update</a>
-
-      </td>";
+      echo "<td>
+      <a class='btn btn-info btn-sm' href='details.php?id=".$row['id']."'>Voir détails</a>
+      <a class='btn btn-danger btn-sm' href='delete.php?id=".$row['id']."' onclick='return confirm(\"Supprimer cet étudiant ?\")'>Supprimer</a>
+      <a class='btn btn-warning btn-sm' href='edit.php?id=".$row['id']."'>Modifier</a>
+    </td>";
+    
      }}
     ?>
   </tbody>
