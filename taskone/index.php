@@ -39,6 +39,7 @@ $etudianttwo = new Etudiant("Skander", [15, 9, 8, 16]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultats étudiants</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=copyright" />
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -81,5 +82,13 @@ $etudianttwo = new Etudiant("Skander", [15, 9, 8, 16]);
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+       
+</body>
+<footer>
+        <span class="material-symbols-outlined">
+            copyright
+        </span> 
+    KHARRAT YOSSR  -  LASSOUED MONTAHA  -   SAIDI RAED
+    </footer>
 </body>
 </html>
