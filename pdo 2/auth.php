@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="mb-3">
             <label for="role" class="form-label">Role</label>
-            <input type="text" class="form-control" id="role" name="role" placeholder="etudiant/administrateur" required>
+            <input type="text" class="form-control" id="role" name="role" placeholder="etudiant/admin" required>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>

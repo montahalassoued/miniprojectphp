@@ -55,6 +55,8 @@ $studentListPage = isAdmin() ? "etudiant.php" : "user.php";
 <head>
   <meta charset="UTF-8">
   <title>Liste des sections</title>
+  <link href="style.css" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -72,7 +74,7 @@ $studentListPage = isAdmin() ? "etudiant.php" : "user.php";
     </div>
   </nav>
   <div class="container mt-5">
-    <h2 class="mb-4">Liste des sections</h2>
+    <h2 class="mb-4 top">Liste des sections</h2>
     
     <table class="table table-bordered">
       <thead>
