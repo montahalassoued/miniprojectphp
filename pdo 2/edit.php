@@ -75,4 +75,3 @@ if (!$etudiant) {
     </div>
 </body>
 </html>
-

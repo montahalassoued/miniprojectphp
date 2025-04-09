@@ -28,10 +28,10 @@ if ($mysqli->connect_error) {
       <a class="navbar-brand" href="#">Students Management System</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-3">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Liste des étudiants</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Liste des sections</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Home.php">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="etudiant.php">Liste des étudiants</a></li>
+          <li class="nav-item"><a class="nav-link" href="section.php">Liste des sections</a></li>
+          <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -42,9 +42,10 @@ if ($mysqli->connect_error) {
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Veuillez renseigner votre recherche">
       <button class="btn btn-danger">Filtrer</button>
-      <button class="btn btn-outline-primary ms-2">
-        <i class="bi bi-person-plus"></i> Ajouter
-      </button>
+      <a href="ajouter_etudiant.php" class="btn btn-outline-primary ms-2">
+    <i class="bi bi-person-plus"></i> Ajouter
+</a>
+
     </div>
 
     <div class="d-flex gap-2 mb-3">

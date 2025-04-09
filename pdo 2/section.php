@@ -78,3 +78,4 @@ $sections = $sectionObj->getAll();
   </div>
 </body>
 </html>
+
