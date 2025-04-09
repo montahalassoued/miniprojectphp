@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $stmt->execute();
-    header("Location: Home.php");
+    header("Location: etudiant.php");
     exit();
 }
 
@@ -70,7 +70,7 @@ if (!$etudiant) {
                 <input type="file" name="image" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">💾 Enregistrer</button>
-            <a href="Home.php" class="btn btn-secondary">Annuler</a>
+            <a href="etudiant.php" class="btn btn-secondary">Annuler</a>
         </form>
     </div>
 </body>
