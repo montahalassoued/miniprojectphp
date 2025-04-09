@@ -1,3 +1,15 @@
+<?php
+session_start();
+include 'data.php';
+
+// Par défaut, la page home pour un utilisateur classique
+$homePage = "user.php";
+// Si le rôle de l'utilisateur est admin, on définit homePage sur home.php
+if (isset($_SESSION['role']) && (strtolower($_SESSION['role']) == 'admin')) {
+    $homePage = "Home.php";
+}
+
+?>
 
 <<!DOCTYPE html>
 <html>
@@ -17,12 +29,13 @@
 
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="Home.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Home.php">Liste des étudiants</a>
-        </li>
+      <li class="nav-item">
+  <a class="nav-link active" href="<?php echo $homePage; ?>">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="<?php echo $homePage; ?>">Liste des étudiants</a>
+</li>
+
         <li class="nav-item">
           <a class="nav-link" href="section.php">Liste des sections</a>
         </li>
