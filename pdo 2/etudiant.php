@@ -74,6 +74,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Students Management System</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -141,9 +142,15 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
             echo "<td>" . $row['birthday'] . "</td>";
             echo "<td>" . $row['section'] . "</td>";
             echo "<td>
-            <a class='btn btn-info btn-sm' href='details.php?id=" . $row['id'] . "'>Voir détails</a>
-            <a class='btn btn-danger btn-sm' href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Supprimer cet étudiant ?\")'>Supprimer</a>
-            <a class='btn btn-warning btn-sm' href='edit.php?id=" . $row['id'] . "'>Modifier</a>
+            <a class='btn btn-info btn-sm' href='details.php?id=" . $row['id'] . "'>
+              <i class='bi bi-info-circle-fill'></i> 
+            </a>
+            <a class='btn btn-warning btn-sm' href='edit.php?id=" . $row['id'] . "'>
+              <i class='bi bi-pencil-fill'></i> 
+            </a>
+            <a class='btn btn-danger btn-sm' href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Supprimer cet étudiant ?\")'>
+              <i class='bi bi-trash3-fill'></i> 
+            </a>
           </td>";
         }
     }
