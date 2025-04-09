@@ -1,23 +1,33 @@
 <?php
-include 'data.php';  // Connexion à la base de données
+session_start();
+include 'data.php';  
+include 'log.php';
 
-// Récupérer la designation depuis l'URL
+if (!isLoggedIn()) {
+    header("Location: auth.php");
+    exit();
+}
+
+
 if (isset($_GET['designation'])) {
     $section = $_GET['designation'];
 } else {
     die('Aucune section spécifiée.');
 }
 
-// Préparer la requête pour récupérer les étudiants de cette section
+
 $stmt = $conn->prepare("SELECT * FROM etudiant WHERE section = ?");
 if (!$stmt) {
     die("Erreur de préparation de la requête : " . $conn->error);
 }
 
-// Lier la désignation de la section à la requête
+
 $stmt->bind_param("s", $section);
 $stmt->execute();
 $result = $stmt->get_result();
+
+$homePage = isAdmin() ? "index-admin.php" : "index-user.php";
+$studentListPage = isAdmin() ? "etudiant.php" : "user.php";
 ?>
 
 <!DOCTYPE html>

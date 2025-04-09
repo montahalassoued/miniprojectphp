@@ -1,6 +1,7 @@
-
 <?php
-include 'data.php'; // Include the database connection file
+session_start(); 
+include 'data.php';
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -23,18 +24,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
-
+    
     if ($user) {
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['role']    = $user['role'];
-        header("Location: index.php");
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role']; 
+        
+        if (strtolower($user['role']) == 'admin') {
+            header("Location: index-admin.php");
+        } else {
+            header("Location: index-user.php");
+        }
         exit();
     } else {
-        echo "Identifiants incorrects.";
+        $error_message = "Identifiants incorrects.";
     }
-
-  $stmt->close();
-  $conn->close();
+    
+    $stmt->close();
+    $conn->close();
 }
 ?>
 
@@ -48,28 +55,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <form class="row g-3 login-form" method="POST" action="">
-    <div class="col-12">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="lalla@example.com" required>
+  <div class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="row">
+      <div class="col-12">
+        <?php if(isset($error_message)): ?>
+          <div class="alert alert-danger text-center">
+            <?php echo $error_message; ?>
+          </div>
+        <?php endif; ?>
+        
+        <form class="login-form" method="POST" action="">
+          <h2 class="text-center mb-4">Connexion</h2>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="lalla@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="lalla" required>
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <input type="text" class="form-control" id="role" name="role" placeholder="etudiant/administrateur" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="*********" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Confirm identity</button>
+        </form>
+      </div>
     </div>
-    <div class="col-12">
-      <label for="username">Username</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="lalla" required>
-    </div>
-    <div class="col-12">
-      <label for="username">Role</label>
-      <input type="text" class="form-control" id="role" name="role" placeholder="etudiant/administrateur" required>
-    </div>
-    <div class="col-12">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="*********" required>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Confirm identity</button>
-    </div>
-    
-  </form>
+  </div>
 </body>
 </html>
-
-
