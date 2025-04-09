@@ -97,13 +97,12 @@ body {
 
 .login-form {
     background: rgba(255, 255, 255, 0.9);
-    padding: 30px 40px;
+    padding: 20px 40px;
     border-radius: 15px; 
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     width: 600px; 
-    margin: 0 auto;
+    margin: -30px auto 20px auto;
     backdrop-filter: blur(8px);
-    animation: fadeIn 0.5s ease-in;
     border: 2px solid #e0e0e0;
 }
 
